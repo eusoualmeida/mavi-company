@@ -20,7 +20,7 @@ export default function Home() {
         <Solutions />
         <HowItWorks />
         <Benefits />
-        <Technologies />
+        {/* <Technologies /> */}
         <TargetAudience />
         <CTA />
         <Footer />
