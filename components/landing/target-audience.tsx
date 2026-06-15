@@ -1,4 +1,27 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Check, X, Zap } from "lucide-react"
+
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6 } },
+}
+
+const leftVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+}
+
+const rightVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+}
+
+const authorityVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3, ease: "easeOut" } },
+}
 
 const forWho = [
   "Negócios digitais com operação complexa",
@@ -15,7 +38,14 @@ const notForWho = [
 
 export function TargetAudience() {
   return (
-    <section id="para-quem" className="py-20 md:py-32 relative">
+    <motion.section
+      id="para-quem"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="py-20 md:py-32 relative"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -29,7 +59,10 @@ export function TargetAudience() {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Lista positiva */}
-            <div className="p-8 rounded-2xl border border-green-500/30 bg-green-500/5 backdrop-blur-sm">
+            <motion.div
+              variants={leftVariants}
+              className="p-8 rounded-2xl border border-green-500/30 bg-green-500/5 backdrop-blur-sm"
+            >
               <h3 className="text-lg font-bold text-foreground mb-6">Para quem é:</h3>
               <div className="space-y-4">
                 {forWho.map((item) => (
@@ -41,10 +74,13 @@ export function TargetAudience() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Lista negativa */}
-            <div className="p-8 rounded-2xl border border-red-500/30 bg-red-500/5 backdrop-blur-sm">
+            <motion.div
+              variants={rightVariants}
+              className="p-8 rounded-2xl border border-red-500/30 bg-red-500/5 backdrop-blur-sm"
+            >
               <h3 className="text-lg font-bold text-foreground mb-6">Para quem não é:</h3>
               <div className="space-y-4">
                 {notForWho.map((item) => (
@@ -56,11 +92,17 @@ export function TargetAudience() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Card de autoridade */}
-          <div className="p-8 rounded-2xl border border-primary/30 bg-primary/5 backdrop-blur-sm">
+          <motion.div
+            variants={authorityVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="p-8 rounded-2xl border border-primary/30 bg-primary/5 backdrop-blur-sm"
+          >
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
                 <Zap className="h-6 w-6 text-primary" />
@@ -74,9 +116,9 @@ export function TargetAudience() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

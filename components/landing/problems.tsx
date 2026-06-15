@@ -1,3 +1,11 @@
+"use client"
+
+import { motion } from "framer-motion"
+
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6 } },
+}
 import {
   AlertCircle,
   Unplug,
@@ -6,6 +14,18 @@ import {
   Users,
   UserX,
 } from "lucide-react";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08 },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+}
 
 const problems = [
   {
@@ -48,7 +68,13 @@ const problems = [
 
 export function Problems() {
   return (
-    <section className="py-20 md:py-32 relative">
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="py-20 md:py-32 relative"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -58,10 +84,17 @@ export function Problems() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-16">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-16"
+        >
           {problems.map((problem) => (
-            <div
+            <motion.div
               key={problem.text}
+              variants={itemVariants}
               className="group p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/50 hover:bg-card/50 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
@@ -79,9 +112,9 @@ export function Problems() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto text-center">
           <div className="p-6 md:p-8 rounded-xl border border-primary/30 bg-primary/5">
@@ -94,6 +127,6 @@ export function Problems() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

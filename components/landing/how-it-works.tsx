@@ -1,4 +1,24 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Search, Layers, Code, Rocket } from "lucide-react"
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+}
+
+const stepVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+}
+
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6 } },
+}
 
 const steps = [
   {
@@ -29,7 +49,14 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-20 md:py-32 relative">
+    <motion.section
+      id="como-funciona"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="py-20 md:py-32 relative"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -42,9 +69,15 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4"
+        >
           {steps.map((step, index) => (
-            <div key={step.number} className="relative group">
+            <motion.div key={step.number} variants={stepVariants} className="relative group">
               {/* Connector Line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-12 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/40 to-primary/10" />
@@ -61,10 +94,10 @@ export function HowItWorks() {
                 <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

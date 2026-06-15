@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { useModal } from "./modal-provider";
 
@@ -14,7 +15,13 @@ export function CTA() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-3xl mx-auto text-center"
+        >
           <div className="p-8 md:p-12 rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/10 to-transparent backdrop-blur-sm">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
               Pronto para evoluir sua operação com tecnologia e IA?
@@ -32,7 +39,7 @@ export function CTA() {
               Solicitar diagnóstico técnico
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

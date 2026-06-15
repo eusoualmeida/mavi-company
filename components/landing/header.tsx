@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,15 +8,25 @@ import { useModal } from "./modal-provider"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { openModal } = useModal()
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const scrolledOffset = scrolled ? 64 : 80
 
   function handleScrollTo(e: React.MouseEvent<HTMLAnchorElement>, targetId: string) {
     e.preventDefault()
     const element = document.getElementById(targetId)
     if (element) {
-      const headerOffset = 80
       const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.scrollY - headerOffset
+      const offsetPosition = elementPosition + window.scrollY - scrolledOffset
 
       window.scrollTo({
         top: offsetPosition,
@@ -29,15 +37,21 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg shadow-black/10"
+          : "bg-background/80 backdrop-blur-md border-b border-border/50"
+      }`}
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-20"}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
               src="/images/mavi-logo.jpeg"
               alt="MaviCompany"
-              className="h-8 md:h-10 w-auto"
+              className={`w-auto transition-all duration-300 ${scrolled ? "h-6 md:h-8" : "h-8 md:h-10"}`}
             />
           </Link>
 
@@ -46,34 +60,34 @@ export function Header() {
             <a
               href="#solucoes"
               onClick={(e) => handleScrollTo(e, "solucoes")}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer"
+              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Soluções
             </a>
             <a
               href="#como-funciona"
               onClick={(e) => handleScrollTo(e, "como-funciona")}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer"
+              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Como Funciona
             </a>
             <a
               href="#tecnologias"
               onClick={(e) => handleScrollTo(e, "tecnologias")}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer"
+              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Tecnologias
             </a>
             <a
               href="#para-quem"
               onClick={(e) => handleScrollTo(e, "para-quem")}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer"
+              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Para Quem
             </a>
             <a
               href="/cases"
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer"
+              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Cases
             </a>
