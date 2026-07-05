@@ -90,28 +90,20 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Serviços */}
+          {/* Atendimento com IA */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
+            <h3 className="text-lg font-semibold mb-4">Atendimento com IA</h3>
             <div className="flex flex-col gap-3 text-sm text-gray-400">
-              <Link
-                href="/servicos/desenvolvimento"
-                className="hover:text-white transition-colors"
-              >
-                Desenvolvimento Web
-              </Link>
-              <Link
-                href="/servicos/automacao"
-                className="hover:text-white transition-colors"
-              >
-                Automação de Processos
-              </Link>
               <Link
                 href="/servicos/agentes-ia"
                 className="hover:text-white transition-colors"
               >
                 Agentes de IA & Chatbots
               </Link>
+            </div>
+
+            <h3 className="text-lg font-semibold mt-8 mb-4">Vendas</h3>
+            <div className="flex flex-col gap-3 text-sm text-gray-400">
               <Link
                 href="/servicos/integracoes"
                 className="hover:text-white transition-colors"
@@ -119,16 +111,35 @@ export function Footer() {
                 Integrações & APIs
               </Link>
               <Link
-                href="/servicos/saas"
-                className="hover:text-white transition-colors"
-              >
-                Plataformas SaaS
-              </Link>
-              <Link
                 href="/servicos/ecommerce"
                 className="hover:text-white transition-colors"
               >
                 E-commerce & Funis
+              </Link>
+            </div>
+          </div>
+
+          {/* Operação e Processos */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Operação e Processos</h3>
+            <div className="flex flex-col gap-3 text-sm text-gray-400">
+              <Link
+                href="/servicos/automacao"
+                className="hover:text-white transition-colors"
+              >
+                Automação de Processos
+              </Link>
+              <Link
+                href="/servicos/desenvolvimento"
+                className="hover:text-white transition-colors"
+              >
+                Desenvolvimento Web
+              </Link>
+              <Link
+                href="/servicos/saas"
+                className="hover:text-white transition-colors"
+              >
+                Plataformas SaaS
               </Link>
               <Link
                 href="/servicos/consultoria"
@@ -196,7 +207,7 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-500">
-              Copyright © 2025 MAVI COMPANY. Todos os direitos reservados.
+              Copyright © 2026 MAVI COMPANY. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <Link href="/privacidade" className="hover:text-white transition-colors">

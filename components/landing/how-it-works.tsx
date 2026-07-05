@@ -24,26 +24,26 @@ const steps = [
   {
     icon: Search,
     number: "01",
-    title: "Diagnóstico técnico e mapeamento",
-    description: "Analisamos sua operação e identificamos oportunidades de automação e melhoria.",
+    title: "Diagnóstico",
+    description: "Mapeamos sua operação de ponta a ponta. Onde estão os gargalos, o que já é sistema, o que ainda é planilha e pessoa.",
   },
   {
     icon: Layers,
     number: "02",
-    title: "Arquitetura da solução",
-    description: "Desenhamos a estrutura técnica ideal para suas necessidades e objetivos.",
+    title: "Arquitetura",
+    description: "Desenhamos como cada pilar (atendimento, vendas, operação) vai ser estruturado com IA, integrações e sistemas sob medida.",
   },
   {
     icon: Code,
     number: "03",
-    title: "Desenvolvimento e automações",
-    description: "Construímos sistemas robustos com IA integrada e automações inteligentes.",
+    title: "Desenvolvimento",
+    description: "Construímos em ciclos curtos. Cada entrega já entra em produção — não guardamos meses de trabalho para um deploy grande.",
   },
   {
     icon: Rocket,
     number: "04",
-    title: "Testes, entrega e suporte",
-    description: "Implementamos, testamos e acompanhamos a performance continuamente.",
+    title: "Entrega e suporte",
+    description: "Colocamos no ar, treinamos o time e acompanhamos os números. Estruturação é processo contínuo, não projeto de final fechado.",
   },
 ]
 
@@ -61,11 +61,14 @@ export function HowItWorks() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Simples. Técnico. Eficiente.
+          <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-primary/80 mb-4">
+            Como funciona
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+            Da conversa inicial ao sistema rodando.
           </h2>
           <p className="text-lg text-muted-foreground">
-            Nosso processo garante resultados previsíveis
+            Estruturação em quatro etapas — sem promessa vaga, sem projeto que dura para sempre.
           </p>
         </div>
 

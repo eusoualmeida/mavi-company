@@ -10,24 +10,24 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mavicompany.com.br'),
   
   title: {
-    default: 'MaviCompany | Desenvolvimento e Automações com IA',
+    default: 'MaviCompany | Estruturação de Empresas com IA',
     template: '%s | MaviCompany'
   },
-  
-  description: 'Desenvolvemos sistemas, integrações e automações inteligentes para empresas que querem crescer com tecnologia, previsibilidade e escala.',
-  
-  keywords: ['desenvolvimento de software', 'automação com IA', 'inteligência artificial', 'sistemas empresariais', 'integrações', 'MaviCompany'],
-  
+
+  description: 'Estruturamos empresas com IA — atendimento, vendas e processos operando de forma inteligente, previsível e escalável.',
+
+  keywords: ['estruturação de empresas com IA', 'consultoria em IA', 'automação com IA', 'inteligência artificial', 'sistemas empresariais', 'integrações', 'MaviCompany'],
+
   authors: [{ name: 'MaviCompany' }],
-  
+
   creator: 'MaviCompany',
-  
+
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://mavicompany.com.br',
-    title: 'MaviCompany | Desenvolvimento e Automações com IA',
-    description: 'Desenvolvemos sistemas, integrações e automações inteligentes para empresas que querem crescer com tecnologia, previsibilidade e escala.',
+    title: 'MaviCompany | Estruturação de Empresas com IA',
+    description: 'Estruturamos empresas com IA — atendimento, vendas e processos operando de forma inteligente, previsível e escalável.',
     siteName: 'MaviCompany',
     images: [
       {
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
       }
     ],
   },
-  
+
   twitter: {
     card: 'summary_large_image',
-    title: 'MaviCompany | Desenvolvimento e Automações com IA',
-    description: 'Desenvolvemos sistemas, integrações e automações inteligentes para empresas que querem crescer com tecnologia.',
+    title: 'MaviCompany | Estruturação de Empresas com IA',
+    description: 'Estruturamos empresas com IA — atendimento, vendas e processos operando de forma inteligente, previsível e escalável.',
     images: ['/android-chrome-512x512.png'],
   },
   

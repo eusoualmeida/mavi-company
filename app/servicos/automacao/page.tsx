@@ -62,13 +62,14 @@ const automations = [
   },
 ]
 
+// TODO: percentuais de resultado só voltam com case real de cliente com autorização.
 const benefits = [
-  "Redução de até 80% em tarefas manuais",
-  "Eliminação de erros humanos",
-  "Processos executados 24/7",
+  "Menos tempo de time preso em tarefas repetitivas",
+  "Eliminação de erros humanos em rotinas críticas",
+  "Processos executados 24/7 sem intervenção",
   "Escalabilidade sem aumentar equipe",
-  "Rastreabilidade completa de ações",
-  "ROI mensurável e rápido",
+  "Rastreabilidade completa de cada ação",
+  "Retorno mensurável dentro de um ciclo curto",
 ]
 
 export default function AutomacaoPage() {

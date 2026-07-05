@@ -1,12 +1,12 @@
 import { Header } from "@/components/landing/header"
 import { Hero } from "@/components/landing/hero"
 import { Problems } from "@/components/landing/problems"
-import { Solutions } from "@/components/landing/solutions"
+import { Thesis } from "@/components/landing/thesis"
+import { Pillars } from "@/components/landing/pillars"
 import { HowItWorks } from "@/components/landing/how-it-works"
-import { Benefits } from "@/components/landing/benefits"
-import { Technologies } from "@/components/landing/technologies"
 import { Testimonials } from "@/components/landing/testimonials"
 import { TargetAudience } from "@/components/landing/target-audience"
+import { Founder } from "@/components/landing/founder"
 import { CTA } from "@/components/landing/cta"
 import { Footer } from "@/components/landing/footer"
 import { ModalProvider } from "@/components/landing/modal-provider"
@@ -18,12 +18,12 @@ export default function Home() {
         <Header />
         <Hero />
         <Problems />
-        <Solutions />
+        <Thesis />
+        <Pillars />
         <HowItWorks />
-        <Benefits />
         <Testimonials />
-        {/* <Technologies /> */}
         <TargetAudience />
+        <Founder />
         <CTA />
         <Footer />
       </main>

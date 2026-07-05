@@ -67,19 +67,22 @@ export default function SobrePage() {
               </div>
               
               <div className="relative">
+                {/*
+                  TODO: inserir números reais com contexto (baseline, período de medição)
+                  ou remover o card. Placeholder abaixo evita números fictícios de
+                  autoridade ("50+", "30+", "99%") no ar até haver dados auditáveis.
+                */}
                 <div className="rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm p-8 md:p-10">
-                  <div className="grid grid-cols-2 gap-6">
-                    {[
-                      { number: "50+", label: "Projetos Entregues" },
-                      { number: "30+", label: "Clientes Ativos" },
-                      { number: "99%", label: "Satisfação" },
-                      { number: "24/7", label: "Suporte" },
-                    ].map((stat) => (
-                      <div key={stat.label} className="text-center">
-                        <p className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</p>
-                        <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      </div>
-                    ))}
+                  <div className="space-y-4">
+                    <p className="text-sm uppercase tracking-[0.2em] text-primary/80">
+                      Como trabalhamos
+                    </p>
+                    <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                      Cada empresa que estruturamos vira parceira de longo prazo. Preferimos poucos clientes profundamente atendidos a muitos superficialmente.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Estruturação não é projeto de escopo fechado: começa por um diagnóstico e evolui em ciclos curtos junto com a operação.
+                    </p>
                   </div>
                 </div>
               </div>

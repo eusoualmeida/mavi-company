@@ -23,12 +23,11 @@ export function CTA() {
           className="max-w-3xl mx-auto text-center"
         >
           <div className="p-8 md:p-12 rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/10 to-transparent backdrop-blur-sm">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-              Pronto para evoluir sua operação com tecnologia e IA?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
+              Pronto para estruturar sua empresa com IA?
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-              A MaviCompany desenvolve sistemas, integra ferramentas e cria
-              automações inteligentes para escalar seu negócio.
+              A conversa começa por um diagnóstico. Sem compromisso, com honestidade sobre o que faz sentido no seu contexto.
             </p>
             <Button
               size="lg"
@@ -36,7 +35,7 @@ export function CTA() {
               onClick={() => openModal("diagnostic")}
             >
               <Rocket className="mr-2 h-5 w-5" />
-              Solicitar diagnóstico técnico
+              Solicitar diagnóstico
             </Button>
           </div>
         </motion.div>

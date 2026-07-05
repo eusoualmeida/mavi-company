@@ -29,40 +29,40 @@ const itemVariants = {
 
 const problems = [
   {
-    icon: AlertCircle,
-    text: "Processos manuais e sistemas mal estruturados",
-    description:
-      "Operações feitas no manual ou com sistemas frágeis geram erros, retrabalho e impedem o crescimento sustentável do negócio.",
-  },
-  {
-    icon: Unplug,
-    text: "Sistemas que não se integram",
-    description:
-      "Plataformas, e-commerces e ferramentas que não conversam entre si criam dados fragmentados e dificultam a gestão e a tomada de decisão.",
-  },
-  {
     icon: MessageSquareOff,
-    text: "Vendas e atendimento sem inteligência",
+    text: "Atendimento que não escala",
     description:
-      "Sem automação e IA, leads esfriam, clientes esperam e oportunidades são perdidas por falta de respostas rápidas e personalizadas.",
+      "Cliente esperando resposta, lead esfriando, time preso em atendimento repetitivo. Sem IA no atendimento, cada novo cliente é um novo custo.",
   },
   {
     icon: BarChart3,
-    text: "Falta de dados e visão em tempo real",
+    text: "Vendas sem previsibilidade",
     description:
-      "Sem dashboards, integrações e dados centralizados, decisões são tomadas no escuro e o negócio perde eficiência.",
+      "Funil sem automação, CRM desatualizado, follow-up manual. Vender vira sorte — não sistema. O crescimento fica travado no esforço individual.",
+  },
+  {
+    icon: AlertCircle,
+    text: "Processos manuais e frágeis",
+    description:
+      "Operação feita em planilhas e ferramentas soltas gera retrabalho, erros e um teto invisível de crescimento sustentado por horas humanas.",
+  },
+  {
+    icon: Unplug,
+    text: "Sistemas que não conversam",
+    description:
+      "CRM, ERP, WhatsApp, e-commerce, pagamento — cada um em seu silo. Dados fragmentados impedem decisão rápida e criam trabalho duplicado.",
   },
   {
     icon: Users,
-    text: "Crescimento que depende de mais pessoas",
+    text: "Crescer significa contratar",
     description:
-      "Sem sistemas bem desenvolvidos e automações inteligentes, crescer significa aumentar equipe, custo e complexidade operacional.",
+      "Sem sistemas e automações, a única alavanca de crescimento é aumentar equipe. Custo, complexidade e risco sobem junto — margem cai.",
   },
   {
     icon: UserX,
-    text: "Negócio dependente de pessoas e não de sistemas",
+    text: "Operação depende de pessoas, não de sistema",
     description:
-      "Quando processos não são suportados por tecnologia, o negócio fica vulnerável a falhas humanas, atrasos e alta rotatividade.",
+      "Se uma pessoa-chave falta, a operação para. Sem tecnologia estruturando os processos, o negócio fica refém de rotinas informais e memória de time.",
   },
 ];
 
@@ -79,8 +79,11 @@ export function Problems() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Seu negócio esta travado por processos manuais?
+          <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-primary/80 mb-4">
+            O problema
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance leading-tight">
+            Seu negócio está travado por processos manuais?
           </h2>
         </div>
 

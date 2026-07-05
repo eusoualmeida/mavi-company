@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description: "Conheça os projetos e cases de sucesso da Mavi Company em automação, IA e desenvolvimento de sistemas.",
 }
 
+// TODO: auditar cada case abaixo. Para permanecer publicado, o case precisa:
+// (1) ter autorização de uso do cliente/empresa;
+// (2) ter métricas com contexto (o que era antes, o que virou, como foi medido);
+// (3) refletir o posicionamento atual (estruturação de empresas com IA — atendimento,
+//     vendas, operação). Landing pages avulsas podem diluir o posicionamento premium
+//     e talvez devam sair desta página ou virar uma seção "Projetos" separada de "Cases".
 const cases = [
   {
     id: 1,

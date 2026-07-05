@@ -4,6 +4,10 @@ import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 
+// TODO: confirmar quais depoimentos são de clientes reais com autorização de uso.
+// Depoimentos não confirmados devem ser removidos. Percentuais e números específicos
+// (70%, 60%, 35%, 40%) precisam de contexto (baseline + como foi medido) ou serem
+// substituídos por descrição qualitativa.
 const testimonials = [
   {
     quote: "A Mavi estruturou todo nosso sistema de gestão documental. Reduzimos o tempo de emissão de laudos em 70% e eliminamos retrabalho com integrações automáticas.",
@@ -82,12 +86,12 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Quem já usa recomenda
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Empresas que transformaram suas operações com a MaviCompany
+          <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-primary/80 mb-4">
+            Quem já estruturou
           </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance leading-tight">
+            Empresas que trocaram esforço por sistema.
+          </h2>
         </motion.div>
 
         <div

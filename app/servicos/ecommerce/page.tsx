@@ -50,13 +50,14 @@ const integrations = [
   "WhatsApp",
 ]
 
+// TODO: percentuais e tempos específicos só voltam com case real de cliente com autorização.
 const benefits = [
-  "Aumento de até 40% na conversão",
-  "Recuperação de carrinhos abandonados",
-  "Checkout em menos de 1 minuto",
+  "Checkout construído para reduzir fricção",
+  "Recuperação automática de carrinhos abandonados",
   "Relatórios de vendas em tempo real",
-  "Integração com marketplaces",
-  "SEO otimizado para e-commerce",
+  "Integração com marketplaces e canais de tráfego",
+  "SEO técnico bem feito, não como opcional",
+  "Funil e loja pensados juntos, não em silos",
 ]
 
 export default function EcommercePage() {

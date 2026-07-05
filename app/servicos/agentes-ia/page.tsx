@@ -54,12 +54,13 @@ const useCases = [
   },
 ]
 
+// TODO: percentuais de resultado só voltam com case real de cliente com autorização.
 const benefits = [
-  "Disponibilidade 24/7 sem custo adicional",
-  "Redução de até 70% nos custos de atendimento",
+  "Disponibilidade 24/7 sem depender de escala humana",
+  "Custo de atendimento previsível, não proporcional ao volume",
   "Tempo de resposta instantâneo",
-  "Escalabilidade ilimitada",
-  "Integração com seus sistemas",
+  "Escalabilidade sem novo headcount",
+  "Integração com seus sistemas existentes",
   "Relatórios e métricas em tempo real",
 ]
 

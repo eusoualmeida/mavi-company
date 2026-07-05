@@ -6,6 +6,13 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useModal } from "./modal-provider"
 
+const navItems = [
+  { label: "Tese", id: "tese" },
+  { label: "Pilares", id: "pilares" },
+  { label: "Como Funciona", id: "como-funciona" },
+  { label: "Para Quem", id: "para-quem" },
+]
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -30,7 +37,7 @@ export function Header() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       })
     }
     setIsMenuOpen(false)
@@ -45,61 +52,49 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-20"}`}>
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
               src="/images/mavi-logo.jpeg"
               alt="MaviCompany"
-              className={`w-auto transition-all duration-300 ${scrolled ? "h-6 md:h-8" : "h-8 md:h-10"}`}
+              className={`w-auto transition-all duration-300 ${
+                scrolled ? "h-6 md:h-8" : "h-8 md:h-10"
+              }`}
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a
-              href="#solucoes"
-              onClick={(e) => handleScrollTo(e, "solucoes")}
-              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Soluções
-            </a>
-            <a
-              href="#como-funciona"
-              onClick={(e) => handleScrollTo(e, "como-funciona")}
-              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Como Funciona
-            </a>
-            <a
-              href="#tecnologias"
-              onClick={(e) => handleScrollTo(e, "tecnologias")}
-              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Tecnologias
-            </a>
-            <a
-              href="#para-quem"
-              onClick={(e) => handleScrollTo(e, "para-quem")}
-              className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Para Quem
-            </a>
-            <a
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => handleScrollTo(e, item.id)}
+                className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Link
               href="/cases"
               className="relative text-muted-foreground hover:text-foreground transition-colors text-sm font-medium cursor-pointer after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               Cases
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
+            <Button
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => openModal("specialist")}
+              onClick={() => openModal("diagnostic")}
             >
-              Falar com especialista
+              Solicitar diagnóstico
             </Button>
           </div>
 
@@ -118,42 +113,31 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-4">
-              <a
-                href="#solucoes"
-                onClick={(e) => handleScrollTo(e, "solucoes")}
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleScrollTo(e, item.id)}
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2 cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Link
+                href="/cases"
+                onClick={() => setIsMenuOpen(false)}
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2 cursor-pointer"
               >
-                Solucoes
-              </a>
-              <a
-                href="#como-funciona"
-                onClick={(e) => handleScrollTo(e, "como-funciona")}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2 cursor-pointer"
-              >
-                Como Funciona
-              </a>
-              <a
-                href="#tecnologias"
-                onClick={(e) => handleScrollTo(e, "tecnologias")}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2 cursor-pointer"
-              >
-                Tecnologias
-              </a>
-              <a
-                href="#para-quem"
-                onClick={(e) => handleScrollTo(e, "para-quem")}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2 cursor-pointer"
-              >
-                Para Quem
-              </a>
-              <Button 
+                Cases
+              </Link>
+              <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-2"
                 onClick={() => {
-                  openModal("specialist")
+                  openModal("diagnostic")
                   setIsMenuOpen(false)
                 }}
               >
-                Falar com especialista
+                Solicitar diagnóstico
               </Button>
             </nav>
           </div>
