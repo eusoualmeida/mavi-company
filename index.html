@@ -1,0 +1,246 @@
+<!-- Link na bio — Mateus / MaviCompany · serviços + infoprodutos · RESPONSIVO -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mateus de Almeida · MaviCompany — Soluções de IA para empresas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500..600&family=Martian+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2EEE7; --cream-2:#FBF8F2; --peach:#F8E7DA;
+    --indigo:#2E2A6B; --indigo-deep:#24215A;
+    --orange:#EF5A2A; --orange-ink:#D24A1E;
+    --muted:#9A9384; --line:#E1D9CC;
+    --disp:'Martian Mono',ui-monospace,monospace;
+    --serif:'Fraunces',Georgia,serif;
+    --body:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:var(--body);color:var(--indigo);background:var(--cream);
+    background-image:radial-gradient(60% 40% at 85% 0%, rgba(239,90,42,.12), transparent 60%);
+    -webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh;
+  }
+  .page{width:100%;max-width:1180px;margin:0 auto;padding:clamp(24px,5vw,60px) clamp(18px,4.5vw,56px) clamp(48px,6vw,72px)}
+  .grid{display:grid;gap:clamp(28px,4vw,60px);grid-template-columns:1fr}
+  @media (min-width:900px){
+    .grid{grid-template-columns:1fr 1.12fr;align-items:start}
+    .col-left{position:sticky;top:clamp(24px,4vw,56px)}
+  }
+
+  /* ---------- HERO ---------- */
+  .kicker{font-family:var(--disp);font-weight:600;font-size:clamp(11px,1.1vw,13px);letter-spacing:.01em;color:var(--orange-ink);margin:0 0 clamp(16px,2vw,22px);display:inline-flex;align-items:center;gap:8px}
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(239,90,42,.18)}
+  .id{display:flex;align-items:center;gap:14px;margin-bottom:clamp(20px,2.6vw,28px)}
+  .avatar{width:clamp(56px,6vw,72px);height:clamp(56px,6vw,72px);flex:none;border-radius:16px;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.2vw,26px);color:#fff;background:linear-gradient(150deg,var(--indigo),var(--indigo-deep));box-shadow:0 8px 20px rgba(46,42,107,.3)}
+  .id .who{min-width:0}
+  .id .nm{font-family:var(--disp);font-weight:700;font-size:clamp(15px,1.6vw,18px);letter-spacing:-.02em;margin:0;display:flex;align-items:center;gap:6px}
+  .id .check{width:16px;height:16px;border-radius:50%;background:var(--orange);display:inline-grid;place-items:center;flex:none}
+  .id .check svg{width:9px;height:9px}
+  .id .co{font-size:clamp(12px,1.2vw,13.5px);color:var(--muted);margin:3px 0 0;font-weight:500}
+  .id .co b{color:var(--indigo);font-weight:700}
+  h1.head{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.06;font-size:clamp(30px,5.2vw,58px);margin:0;color:var(--indigo)}
+  h1.head em{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--orange);letter-spacing:0}
+  .sub{font-size:clamp(15px,1.5vw,19px);color:var(--muted);line-height:1.55;margin:clamp(16px,2vw,24px) 0 0;font-weight:500;max-width:42ch}
+  .sub b{color:var(--orange);font-weight:700}
+  .sub .ink{color:var(--indigo);font-weight:600}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(20px,2.4vw,28px)}
+  .stat{display:inline-flex;align-items:center;gap:7px;font-size:clamp(11.5px,1.15vw,13px);font-weight:600;color:var(--indigo);background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px 7px 10px}
+  .stat svg{width:13px;height:13px;color:var(--orange);flex:none}
+  .cta-wrap{margin-top:clamp(22px,2.6vw,30px)}
+  .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-family:var(--disp);font-weight:700;font-size:clamp(13px,1.3vw,15px);letter-spacing:-.01em;padding:15px 24px;border-radius:14px;box-shadow:0 10px 24px rgba(239,90,42,.32);transition:transform .2s, box-shadow .2s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(239,90,42,.4)}
+  .cta svg{width:17px;height:17px}
+  .cta-note{font-size:12px;color:var(--muted);margin:10px 2px 0;font-weight:500;display:flex;align-items:center;gap:6px}
+  .cta-note svg{width:13px;height:13px;color:var(--orange-ink)}
+  .social{display:flex;gap:9px;margin-top:clamp(20px,2.4vw,28px)}
+  .social a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--cream-2);border:1px solid var(--line);color:var(--indigo);transition:.2s;text-decoration:none}
+  .social a:hover{color:#fff;background:var(--indigo);border-color:var(--indigo);transform:translateY(-2px)}
+  .social svg{width:18px;height:18px}
+
+  /* ---------- LABELS DE SEÇÃO ---------- */
+  .label{display:flex;align-items:center;gap:12px;margin:0 0 clamp(6px,1vw,12px);font-family:var(--disp);font-weight:600;font-size:clamp(11px,1.1vw,12px);letter-spacing:.05em;text-transform:uppercase;color:var(--indigo)}
+  .label::after{content:"";height:1px;flex:1;background:var(--line)}
+  .label.mt{margin-top:clamp(30px,4vw,44px)}
+  .label .hint{font-family:var(--body);text-transform:none;letter-spacing:0;font-weight:500;font-size:11px;color:var(--muted)}
+
+  /* ---------- ROW BASE ---------- */
+  .row{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(12px,1.4vw,18px);align-items:center;text-decoration:none;color:inherit;padding:clamp(15px,1.8vw,20px) clamp(10px,1.2vw,16px);border-bottom:1px solid var(--line);border-radius:14px;transition:background .22s;opacity:0;transform:translateY(10px)}
+  .row.in{opacity:1;transform:none}
+  .row:hover,.row:focus-visible{background:var(--peach);outline:none;border-color:transparent}
+  .row .num{font-family:var(--disp);font-weight:700;font-size:clamp(13px,1.3vw,15px);color:var(--muted);transition:color .22s;padding-top:2px}
+  .row:hover .num,.row:focus-visible .num{color:var(--orange)}
+  .r-title{font-family:var(--disp);font-weight:700;font-size:clamp(15px,1.6vw,19px);letter-spacing:-.02em;margin:0;color:var(--indigo);line-height:1.2}
+  .r-cat{font-size:clamp(12px,1.25vw,14px);color:var(--muted);margin:4px 0 0;font-weight:500;line-height:1.45}
+  .r-price{font-family:var(--disp);font-weight:600;font-size:clamp(11px,1.1vw,12.5px);color:var(--orange-ink);margin:6px 0 0}
+  .r-arrow{color:var(--muted);transition:transform .22s,color .22s;flex:none;width:clamp(22px,2.2vw,26px);height:clamp(22px,2.2vw,26px);display:grid;place-items:center}
+  .row:hover .r-arrow,.row:focus-visible .r-arrow{color:var(--orange);transform:translate(3px,-3px)}
+  .r-arrow svg{width:100%;height:100%}
+  .badge{display:inline-block;font-family:var(--disp);font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--orange);padding:3px 9px;border-radius:999px;margin-bottom:7px}
+  .tag-prem{display:inline-block;font-family:var(--disp);font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo);border:1px solid var(--indigo);padding:2px 9px;border-radius:999px;margin-bottom:7px}
+  .row.premium{border:1.5px solid var(--indigo);border-radius:16px;background:var(--cream-2)}
+  .row.premium:hover{background:#f2effa}
+
+  /* nós de ícone (infoprodutos) */
+  .inode{width:clamp(40px,4.4vw,50px);height:clamp(40px,4.4vw,50px);border-radius:12px;flex:none;display:grid;place-items:center;background:var(--indigo);color:#fff}
+  .inode svg{width:52%;height:52%}
+  /* pílula de preço */
+  .pricepill{font-family:var(--disp);font-weight:700;font-size:clamp(12px,1.3vw,14px);color:#fff;background:var(--orange);padding:6px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 12px rgba(239,90,42,.28)}
+
+  /* ---------- BLOCO DESTAQUE ---------- */
+  .feature{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,1.6vw,20px);align-items:center;text-decoration:none;color:#fff;background:var(--indigo);background-image:radial-gradient(120% 100% at 88% 0%, rgba(239,90,42,.3), transparent 55%);border-radius:20px;padding:clamp(20px,2.4vw,28px);margin:clamp(12px,1.4vw,16px) 0;overflow:hidden;box-shadow:0 14px 30px rgba(46,42,107,.28);transition:transform .22s, box-shadow .22s;opacity:0;transform:translateY(10px)}
+  .feature.in{opacity:1;transform:none}
+  .feature:hover,.feature:focus-visible{transform:translateY(-3px);box-shadow:0 22px 44px rgba(46,42,107,.38);outline:none}
+  .feature .num{font-family:var(--disp);font-weight:700;font-size:clamp(13px,1.3vw,15px);color:#ffb697;padding-top:2px}
+  .f-tag{display:inline-block;font-family:var(--disp);font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#ffd9c6;border:1px solid rgba(255,178,151,.5);padding:2px 9px;border-radius:999px;margin-bottom:9px}
+  .f-title{font-family:var(--disp);font-weight:700;font-size:clamp(16px,1.8vw,22px);letter-spacing:-.02em;margin:0;line-height:1.2}
+  .f-title em{font-family:var(--serif);font-style:italic;font-weight:600;color:#ff9e78;letter-spacing:0}
+  .f-cat{font-size:clamp(12.5px,1.3vw,15px);color:#c7c4e8;margin:6px 0 0;font-weight:500;line-height:1.45}
+  .f-price{font-family:var(--disp);font-weight:600;font-size:clamp(11px,1.1vw,12.5px);color:#ffb697;margin:7px 0 0}
+  .f-arrow{width:clamp(34px,3.4vw,42px);height:clamp(34px,3.4vw,42px);border-radius:50%;background:var(--orange);display:grid;place-items:center;flex:none;transition:transform .22s}
+  .feature:hover .f-arrow,.feature:focus-visible .f-arrow{transform:translate(2px,-2px)}
+  .f-arrow svg{width:45%;height:45%;color:#fff}
+
+  footer{margin-top:clamp(36px,5vw,64px);padding-top:clamp(20px,2.4vw,28px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .sig{font-family:var(--serif);font-style:italic;font-size:clamp(13px,1.3vw,15px);color:var(--muted);margin:0}
+  .sig b{font-style:normal;font-family:var(--disp);font-weight:600;font-size:clamp(11px,1.1vw,12px);color:var(--indigo);letter-spacing:0;display:block;margin-top:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.row,.feature{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="grid">
+
+    <!-- HERÓI -->
+    <section class="col-left">
+      <p class="kicker"><span class="dot"></span>soluções de IA para empresas</p>
+      <div class="id">
+        <div class="avatar" aria-hidden="true">MA</div>
+        <div class="who">
+          <p class="nm">Mateus de Almeida
+            <span class="check" aria-label="verificado"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </p>
+          <p class="co">por <b>MaviCompany</b> · IA &amp; automação</p>
+        </div>
+      </div>
+      <h1 class="head">Sua operação tem <em>processo manual drenando</em> tempo e dinheiro.</h1>
+      <p class="sub">Eu resolvo com <span class="ink">IA e automação</span> e deixo <b>rodando na sua operação, sem quebrar</b> — menos trabalho manual, mais resultado.</p>
+      <div class="stats">
+        <span class="stat"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Diagnóstico em dias</span>
+        <span class="stat"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Rodando em produção</span>
+        <span class="stat"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem depender do seu time técnico</span>
+      </div>
+      <div class="cta-wrap">
+        <a class="cta" href="https://wa.me/55[[DDD+NUMERO]]?text=Oi!%20Quero%20resolver%20um%20processo%20da%20minha%20opera%C3%A7%C3%A3o%20com%20IA.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.9-.1 1.5Z"/></svg>
+          Falar sobre meu processo
+        </a>
+        <p class="cta-note"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Resposta em até 24h · sem compromisso</p>
+      </div>
+      <div class="social">
+        <a href="https://linkedin.com/in/eusoualmeida" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9V9Z"/></svg></a>
+        <a href="https://github.com/eusoualmeida" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
+        <a href="https://wa.me/55[[DDD+NUMERO]]" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.9-.1 1.5Z"/></svg></a>
+        <a href="mailto:contato.almeidagf@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.9"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </section>
+
+    <!-- COLUNA DIREITA: DUAS SEÇÕES -->
+    <section class="col-right">
+
+      <!-- SEÇÃO 1 · INFOPRODUTOS -->
+      <div class="label">Prefere começar sozinho? <span class="hint">· cursos &amp; ferramentas</span></div>
+
+      <a class="row" href="#" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <span>
+          <span class="badge">mais vendido</span>
+          <h2 class="r-title">Kit de Prompts de IA</h2>
+          <p class="r-cat">60 prompts prontos pra usar IA no seu negócio hoje — vendas, gestão e marketing.</p>
+        </span>
+        <span class="pricepill">R$47</span>
+      </a>
+
+      <a class="row" href="#" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <span>
+          <h2 class="r-title">Masterclass: IA na Operação</h2>
+          <p class="r-cat">Aula de 1h: o que dá pra automatizar no seu negócio e por onde começar. Com workbook.</p>
+        </span>
+        <span class="pricepill">R$197</span>
+      </a>
+
+      <a class="feature" href="#" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span>
+          <span class="f-tag">programa completo</span>
+          <h2 class="f-title">Operação no <em>Automático</em></h2>
+          <p class="f-cat">Passo a passo pra você mesmo automatizar seus primeiros processos, do zero.</p>
+        </span>
+        <span class="pricepill">R$497</span>
+      </a>
+
+      <!-- SEÇÃO 2 · SERVIÇOS -->
+      <div class="label mt">A gente resolve pra você <span class="hint">· serviços</span></div>
+
+      <a class="row" href="#" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <span>
+          <span class="badge">comece por aqui</span>
+          <h2 class="r-title">Diagnóstico de Automação</h2>
+          <p class="r-cat">Mapeio onde sua operação perde tempo e o que vale automatizar primeiro. Valor abatido se fechar o projeto.</p>
+          <p class="r-price">a partir de R$1.500 · entrega em dias</p>
+        </span>
+        <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="row" href="#" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <span>
+          <span class="badge">mais procurado</span>
+          <h2 class="r-title">Implementação de Solução</h2>
+          <p class="r-cat">Seu processo resolvido com IA, rodando na operação — deploy e treino inclusos.</p>
+          <p class="r-price">projeto sob medida · a partir de R$8.000</p>
+        </span>
+        <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="row" href="#" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span>
+          <h2 class="r-title">Operação Inteligente</h2>
+          <p class="r-cat">Mantenho, evoluo e automatizo processos novos todo mês. Suporte contínuo.</p>
+          <p class="r-price">retainer mensal · sob consulta</p>
+        </span>
+        <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="feature" href="#" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <span>
+          <span class="f-tag">premium · chave na mão</span>
+          <h2 class="f-title">Pacote <em>Completo</em></h2>
+          <p class="f-cat">Diagnóstico + implementação + operação num pacote fechado. Pra quem quer resolver tudo de uma vez.</p>
+          <p class="f-price">sob consulta</p>
+        </span>
+        <span class="f-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+    </section>
+  </div>
+
+  <footer>
+    <p class="sig">rodando em produção.<b>por MaviCompany</b></p>
+  </footer>
+</main>
+
+<script>
+  const items = document.querySelectorAll('.row, .feature');
+  items.forEach((el, i) => setTimeout(() => el.classList.add('in'), 120 + i * 70));
+</script>
+</body>
+</html>

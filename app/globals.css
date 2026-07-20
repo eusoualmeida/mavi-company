@@ -3,80 +3,134 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   TOKENS — fonte da verdade
+   ------------------------------------------------------------
+   Bloco 1: Editorial Mono (site público).
+   Bloco 2: tokens shadcn escuros — usados APENAS por /dashboard
+            e /(auth). Não mexer sem checar essas rotas.
+   ============================================================ */
+
 :root {
+  /* --- Editorial Mono --- */
+  --cream: #f2eee7; /* fundo padrão */
+  --cream-2: #fbf8f2; /* superfícies claras: pills, cartões, ícones */
+  --peach: #f8e7da; /* hover/realce */
+  --indigo: #2e2a6b; /* texto principal + blocos de marca/CTA escuro */
+  --indigo-deep: #24215a;
+  --orange: #ef5a2a; /* accent: destaques, CTAs, setas */
+  --orange-ink: #d24a1e; /* laranja para TEXTO pequeno (contraste AA) */
+  --muted-warm: #9a9384; /* texto secundário */
+  --line: #e1d9cc; /* bordas e divisores */
+
+  --r-pill: 999px;
+  --r-row: 14px;
+  --r-card: 20px;
+  --shadow: 0 2px 4px rgba(28, 30, 60, 0.05), 0 14px 30px rgba(28, 30, 60, 0.09);
+  --shadow-lift: 0 20px 42px rgba(46, 42, 107, 0.3);
+
+  --ease-editorial: cubic-bezier(0.34, 1.2, 0.4, 1);
+
+  /* Stacks de fonte. As vars --font-* vêm do next/font em app/layout.tsx. */
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
+  --font-disp: var(--font-martian), ui-monospace, monospace;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+
+  /* --- shadcn / dashboard (tema escuro) --- */
   --background: #000000;
   --foreground: #ffffff;
-  --card: #0B0B0F;
+  --card: #0b0b0f;
   --card-foreground: #ffffff;
-  --popover: #0B0B0F;
+  --popover: #0b0b0f;
   --popover-foreground: #ffffff;
-  --primary: #7C3AED;
+  --primary: #7c3aed;
   --primary-foreground: #ffffff;
   --secondary: #1a1a1f;
   --secondary-foreground: #ffffff;
   --muted: #1a1a1f;
   --muted-foreground: #a1a1aa;
-  --accent: #8B5CF6;
+  --accent: #8b5cf6;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #1f1f24;
   --input: #1f1f24;
-  --ring: #7C3AED;
+  --ring: #7c3aed;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: #0B0B0F;
+  --sidebar: #0b0b0f;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #7C3AED;
+  --sidebar-primary: #7c3aed;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #1a1a1f;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #1f1f24;
-  --sidebar-ring: #7C3AED;
+  --sidebar-ring: #7c3aed;
 }
 
-.dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #0B0B0F;
-  --card-foreground: #ffffff;
-  --popover: #0B0B0F;
-  --popover-foreground: #ffffff;
-  --primary: #7C3AED;
-  --primary-foreground: #ffffff;
-  --secondary: #1a1a1f;
-  --secondary-foreground: #ffffff;
-  --muted: #1a1a1f;
-  --muted-foreground: #a1a1aa;
-  --accent: #8B5CF6;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: #1f1f24;
-  --input: #1f1f24;
-  --ring: #7C3AED;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #0B0B0F;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #7C3AED;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a1a1f;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1f1f24;
-  --sidebar-ring: #7C3AED;
+/* ============================================================
+   ESCOPO DO SITE PÚBLICO
+   Redefine os tokens shadcn para o tema creme dentro do site,
+   para que primitivos Radix (dialog, accordion) herdem a marca
+   sem afetar o dashboard.
+   ============================================================ */
+
+.site-scope {
+  --background: var(--cream);
+  --foreground: var(--indigo);
+  --card: var(--cream-2);
+  --card-foreground: var(--indigo);
+  --popover: var(--cream-2);
+  --popover-foreground: var(--indigo);
+  --primary: var(--orange);
+  --primary-foreground: var(--cream-2);
+  --secondary: var(--peach);
+  --secondary-foreground: var(--indigo);
+  --muted: var(--peach);
+  --muted-foreground: var(--muted-warm);
+  --accent: var(--peach);
+  --accent-foreground: var(--indigo);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--orange);
+
+  background-color: var(--cream);
+  color: var(--indigo);
+  font-family: var(--font-body);
+}
+
+/* Evita o preto do body aparecer no overscroll das páginas do site. */
+body:has(.site-scope) {
+  background-color: var(--cream);
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-disp);
+
+  /* Editorial Mono → utilitários Tailwind (bg-cream, text-indigo, border-line…) */
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-peach: var(--peach);
+  --color-indigo: var(--indigo);
+  --color-indigo-deep: var(--indigo-deep);
+  --color-orange: var(--orange);
+  --color-orange-ink: var(--orange-ink);
+  --color-muted-warm: var(--muted-warm);
+  --color-line: var(--line);
+
+  --radius-pill: var(--r-pill);
+  --radius-row: var(--r-row);
+  --radius-card: var(--r-card);
+
+  --shadow-editorial: var(--shadow);
+  --shadow-lift: var(--shadow-lift);
+
+  /* shadcn */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -129,15 +183,110 @@
     background-color: color-mix(in srgb, var(--primary) 40%, transparent);
     color: var(--foreground);
   }
-}
-
-@layer utilities {
-  .animate-bounce-once {
-    animation: bounce-once 0.4s ease-out;
+  .site-scope ::selection {
+    background-color: var(--peach);
+    color: var(--indigo);
+  }
+  .site-scope :focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-@keyframes bounce-once {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+/* ============================================================
+   ESCALA TIPOGRÁFICA — a assinatura do sistema
+   ============================================================ */
+
+@layer components {
+  /* Manchete hero */
+  .display-1 {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: clamp(34px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  /* Título de seção */
+  .display-2 {
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  /* Título de card */
+  .display-3 {
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: clamp(18px, 2vw, 20px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  /* Destaque itálico serifado — máx. 2 por manchete */
+  .em-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 0;
+  }
+  /* Kicker / label / preço */
+  .kicker {
+    font-family: var(--font-disp);
+    font-weight: 600;
+    font-size: clamp(11px, 1.2vw, 12px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .body-lg {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(16px, 1.6vw, 18px);
+    line-height: 1.55;
+    color: var(--muted-warm);
+  }
+  /* Destaques cirúrgicos dentro do corpo — só palavras, nunca frases */
+  .ink-orange {
+    color: var(--orange-ink);
+    font-weight: 700;
+  }
+  .ink-indigo {
+    color: var(--indigo);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .measure {
+    max-width: 60ch;
+  }
+  /* Entrada em cena (IntersectionObserver adiciona .is-in) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s var(--ease-editorial), transform 0.5s var(--ease-editorial);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }

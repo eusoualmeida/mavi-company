@@ -2,7 +2,35 @@
   "permissions": {
     "allow": [
       "Bash(git check-ignore *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git mv *)",
+      "Bash(git rm *)",
+      "Bash(npm install *)",
+      "Bash(git stash *)",
+      "Bash(cp app/layout.tsx __TRACKED_VAR__/layout.bak.tsx)",
+      "Bash(sed -i 's|^ <Analytics />| {/* <Analytics /> */}|; s|^import { Analytics } from \"@vercel/analytics/next\"|// import { Analytics } from \"@vercel/analytics/next\"|' app/layout.tsx)",
+      "Bash(node -e ' *)",
+      "Bash(node -p \"require\\('next/package.json'\\).version\")",
+      "Bash(npm view *)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>{const v=JSON.parse\\(d\\).filter\\(x=>x.startsWith\\('16.'\\)&&!x.includes\\('canary'\\)\\);console.log\\(v.slice\\(-12\\).join\\('\\\\n'\\)\\)}\\)\")",
+      "Bash(node -p \"'next => '+require\\('next/package.json'\\).version\")",
+      "Bash(npx next *)",
+      "Bash(npm -v)",
+      "Bash(echo \"node: $\\(node -v\\) npm: $\\(npm -v\\)\")",
+      "Bash(NODE_OPTIONS=\"--no-async-context-frame\" npx next build)",
+      "Bash(cp /tmp/layout.mine.tsx app/layout.tsx)",
+      "Bash(sed -i 's|^// import { Analytics } from \"@vercel/analytics/next\"|import { Analytics } from \"@vercel/analytics/next\"|; s|^        {/\\\\* <Analytics /> \\\\*/}|        <Analytics />|' app/layout.tsx)",
+      "Bash(curl -s \"http://localhost:3117/\")",
+      "Bash(grep -oE '<h1[^>]*class=\"[^\"]*display-1[^\"]*\"[^>]*>.{0,220}' /tmp/home.html)",
+      "Bash(grep -oE 'https://wa\\\\.me/[0-9]+\\\\?text=[^\"]{0,40}' /tmp/home.html)",
+      "Bash(grep -oE '\\\\.\\(display-1|em-serif\\)\\\\{[^}]{0,130}' /tmp/site.css)",
+      "Read(//c/Users/MATEUS~1/AppData/Local/Temp/claude/**)",
+      "Bash(npm i *)",
+      "Bash(node shot3.js \"C:/Users/MATEUS~1/AppData/Local/Temp/claude\")",
+      "Read(//c/Users/Mateus Almeida/.claude/projects/c--Users-Mateus-Almeida-Documents-github-mavi-company/memory/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Mateus Almeida\\.claude\\projects\\c--Users-Mateus-Almeida-Documents-github-mavi-company\\memory"
     ]
   }
 }
